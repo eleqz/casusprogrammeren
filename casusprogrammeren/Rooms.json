@@ -1,33 +1,33 @@
-﻿[
-  {
-    "Type": "lokaal",
-    "Code": "P2.167",
-    "Name": "ICT lokaal",
-    "VolumeM3": 500,
-    "CapacityPeople": 60,
-    "PresentStudents": 52,
-    "PresentTeachers": 2,
-    "DurationHours": 3,
-    "Activity": "college"
-  },
-  {
-    "Type": "overlegruimte",
-    "Code": "S0.096",
-    "Name": "werkruimte",
-    "VolumeM3": 45,
-    "CapacityPeople": 4,
-    "PresentPeople": 4,
-    "DurationHours": 1.5,
-    "Activity": "vergadering"
-  },
-  {
-    "Type": "lokaal",
-    "Code": "E0.000",
-    "Name": "bowling",
-    "VolumeM3": -20,
-    "CapacityPeople": 10,
-    "PresentPeople": -5,
-    "DurationHours": null,
-    "Activity": null
-  }
-]
+﻿  [
+    {
+      "Type": "lokaal",
+      "Code": "P2.167",
+      "Name": "ICT lokaal",
+      "VolumeM3": 500,
+      "CapacityPeople": 60,
+      "PresentStudents": 52,
+      "PresentTeachers": 2,
+      "DurationHours": 3,
+      "Activity": "college"
+    },
+    {
+      "Type": "overlegruimte",
+      "Code": "S0.096",
+      "Name": "werkruimte",
+      "VolumeM3": 45,
+      "CapacityPeople": 4,
+      "PresentPeople": 4,
+      "DurationHours": 1.5,
+      "Activity": "vergadering"
+    },
+    {
+      "Type": "lokaal",
+      "Code": "E0.000",
+      "Name": "bowling",
+      "VolumeM3": -20,
+      "CapacityPeople": 10,
+      "PresentPeople": -5,
+      "DurationHours": null,
+      "Activity": null
+    }
+  ]

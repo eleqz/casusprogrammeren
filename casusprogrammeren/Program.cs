@@ -1,16 +1,21 @@
-﻿using casusprogrammeren.utils;
+﻿using casusprogrammeren.Services.Gui;
+using Terminal.Gui;
+
 
 namespace casusprogrammeren
+
+
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            DeserializeFromFile.Deserialize("Rooms");
+            Application.Run<MainWindow>();
+            Application.Shutdown();
         }
     }
 }
+
 
 
 
