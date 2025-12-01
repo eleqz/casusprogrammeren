@@ -1,4 +1,7 @@
-﻿Vragen
+﻿# Casus Programmeren
+
+
+### Vragen
 1. Als beheerder wil ik kunnen vastleggen dat een bepaalde ruimte een naam, een
    nummer, een type, een inhoud in m3 en een bepaalde capaciteit heeft. Optioneel mag
    een ruimte ook een geo-locatie krijgen.
@@ -27,5 +30,6 @@
     voorkeur voor een lokaal opgeven. Als er geen lokaal gevonden wordt, wordt het
     verzoek afgewezen. De planning moet enigszins optimaal zijn, waarbij de capaciteit van
     een lokaal zoveel mogelijk wordt benut.
-11. https://gui-cs.github.io/Terminal.GuiV1Docs/docs/overview.html
-12. docs terminal.gui v1
+
+#### Docs terminal.gui v1.19.0
+https://gui-cs.github.io/Terminal.GuiV1Docs/docs/overview.html
