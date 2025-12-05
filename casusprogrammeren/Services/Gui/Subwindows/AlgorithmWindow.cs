@@ -12,7 +12,7 @@ public class AlgorithmWindow : Window {
         var items = new List<string> 
         {
             "Pseudocode Algoritme", 
-            "-", 
+            "Algoritme", 
             "-", 
             "← Terug"
         };

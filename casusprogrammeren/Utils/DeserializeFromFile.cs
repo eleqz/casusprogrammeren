@@ -13,8 +13,6 @@ namespace casusprogrammeren.utils
         public float? DurationHours { get; set; }
         public string? Activity { get; set; }
     }
-    
-    
 
     public class DeserializeFromFile
     {
@@ -31,5 +29,4 @@ namespace casusprogrammeren.utils
             return list;
         }
     }
-
 }

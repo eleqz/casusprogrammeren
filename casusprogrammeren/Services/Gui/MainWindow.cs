@@ -1,6 +1,4 @@
-﻿using casusprogrammeren.Services.Handlers;
-using casusprogrammeren.Services.Tui;
-using casusprogrammeren.utils;
+﻿using casusprogrammeren.Services.Tui;
 using Terminal.Gui;
 namespace casusprogrammeren.Services.Gui;
 

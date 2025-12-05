@@ -1,7 +1,7 @@
-﻿using System.Text.Json;
-using casusprogrammeren.Services.Handlers;
+﻿using casusprogrammeren.Services.Handlers;
 using casusprogrammeren.utils;
 using Terminal.Gui;
+
 namespace casusprogrammeren.Services.Tui;
 
 public class RoomsWindow : Window {
@@ -39,7 +39,6 @@ public class RoomsWindow : Window {
             X = 0,
             Y = 6,
         };
-        
         
         listView.OpenSelectedItem += (args) =>
         {
@@ -79,7 +78,6 @@ public class RoomsWindow : Window {
                             MessageBox.ErrorQuery("Fout", $"Kon niet opslaan: {ex.Message}", "OK");
                         }
                     };
-
                     break;
                 }
                 case 2:

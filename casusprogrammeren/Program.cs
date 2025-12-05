@@ -1,9 +1,7 @@
 ﻿using casusprogrammeren.Services.Gui;
 using Terminal.Gui;
 
-
 namespace casusprogrammeren
-
 
 {
     class Program
@@ -15,7 +13,3 @@ namespace casusprogrammeren
         }
     }
 }
-
-
-
-
