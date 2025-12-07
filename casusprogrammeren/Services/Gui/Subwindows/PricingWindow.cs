@@ -1,7 +1,7 @@
 ﻿using casusprogrammeren.Services.Handlers;
 using Terminal.Gui;
 
-namespace casusprogrammeren.Services.Gui;
+namespace casusprogrammeren.Services.Gui.Subwindows;
 
 public class PricingWindow : Window {
 
@@ -34,7 +34,7 @@ public class PricingWindow : Window {
             {
                 case 0:
                 { 
-                    MessageBox.Query("", ActionAlgorithmHandler.HandlePseudoCode(), "OK");
+                    MessageBox.Query("", ActionPricingHandler.HandleAction(), "OK");
                     break;
                 }
                 case 1:

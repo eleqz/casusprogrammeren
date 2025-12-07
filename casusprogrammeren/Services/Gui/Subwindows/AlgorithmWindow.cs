@@ -39,7 +39,7 @@ public class AlgorithmWindow : Window {
                 }
                 case 1:
                 {
-                    /*MessageBox.Query("Action", ActionHandler.HandleOxygenCalculator(), "OK");*/
+                    MessageBox.Query("", ActionAlgorithmHandler.HandleAlgorithm(), "OK");
                     break;
                 }
                 case 2:

@@ -1,6 +1,6 @@
 ﻿namespace casusprogrammeren.Services.Calculation;
 
-public class RoomsCalculator
+public class PricingCalculator
 {
     public enum Days
     {

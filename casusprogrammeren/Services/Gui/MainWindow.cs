@@ -1,4 +1,5 @@
-﻿using casusprogrammeren.Services.Tui;
+﻿using casusprogrammeren.Services.Gui.Subwindows;
+using casusprogrammeren.Services.Tui;
 using Terminal.Gui;
 namespace casusprogrammeren.Services.Gui;
 

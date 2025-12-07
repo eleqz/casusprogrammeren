@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using casusprogrammeren.Services.Calculation;
 
 namespace casusprogrammeren.Services.Handlers;
 
@@ -40,4 +41,16 @@ public class ActionAlgorithmHandler
             return sb.ToString();
         }
     }
+
+    public static string HandleAlgorithm()
+    {
+        var sb = new StringBuilder();
+        var path = AlgorithmCalculator.CalculateShortestPath();
+    
+        sb.AppendLine("Kortste pad is: ");
+        sb.AppendLine(string.Join(" -> ", path));
+    
+        return sb.ToString();
+    }
+
 }
