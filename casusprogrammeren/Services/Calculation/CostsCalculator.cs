@@ -21,53 +21,53 @@ public class CostsCalculator
         return total;
     }
     
-    public static int CalculateSpectrumRoomPrice(int capacity, int openingHours)
+    public static int CalculateSpectrumRoomCosts(int capacity, int openingHours)
     {
-        int basePrice = capacity == 60 ? 500 : 300;
+        int baseCosts = capacity == 60 ? 500 : 300;
         int extraCharge = CalculateExtraCharge(openingHours);
     
         if (extraCharge == 0)
         {
-            return basePrice;
+            return baseCosts;
         }
     
-        return basePrice + extraCharge;
+        return baseCosts + extraCharge;
     }
 
-    public static int CalculatePrismaRoomPrice(int capacity, int openingHours)
+    public static int CalculatePrismaRoomCosts(int capacity, int openingHours)
     {
-        int basePrice = capacity == 60 ? 475 : 275;
+        int baseCosts = capacity == 60 ? 475 : 275;
         int extraCharge = CalculateExtraCharge(openingHours);
     
         if (extraCharge == 0)
         {
-            return basePrice;
+            return baseCosts;
         }
     
-        return basePrice + extraCharge;
+        return baseCosts + extraCharge;
     }
 
-    public static int CalculateSpectrumWorkspacePrice(int openingHours)
+    public static int CalculateSpectrumWorkspaceCosts(int openingHours)
     {
-        int basePrice = 100;
+        int baseCosts = 100;
         int extraCharge = CalculateExtraCharge(openingHours);
     
-        return extraCharge == 0 ? basePrice : basePrice + extraCharge;
+        return extraCharge == 0 ? baseCosts : baseCosts + extraCharge;
     }
 
-    public static int CalculatePrismaWorkspacePrice(int openingHours)
+    public static int CalculatePrismaWorkspaceCosts(int openingHours)
     {
-        int basePrice = 90;
+        int baseCosts = 90;
         int extraCharge = CalculateExtraCharge(openingHours);
     
-        return extraCharge == 0 ? basePrice : basePrice + extraCharge;
+        return extraCharge == 0 ? baseCosts : baseCosts + extraCharge;
     }
 
-    public static int CalculatePublicSpacePrice(int openingHours)
+    public static int CalculatePublicSpaceCosts(int openingHours)
     {
-        int basePrice = 200;
+        int baseCosts = 200;
         int extraCharge = CalculateExtraCharge(openingHours);
     
-        return extraCharge == 0 ? basePrice : basePrice + extraCharge;
+        return extraCharge == 0 ? baseCosts : baseCosts + extraCharge;
     }
 }

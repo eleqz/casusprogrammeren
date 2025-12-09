@@ -5,7 +5,6 @@ namespace casusprogrammeren.Services.Handlers;
 
 public class ActionRoomsHandler
 {
-    // Vraag 1
     public static string HandleAction()
     {
         var sb = new StringBuilder();

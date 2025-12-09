@@ -10,34 +10,33 @@ public class ActionPricingHandler
         switch (lokaalType)
         {
             case 0: // Spectrum Room
-                return CostsCalculator.CalculateSpectrumRoomPrice(capacity, openingHours);
+                return CostsCalculator.CalculateSpectrumRoomCosts(capacity, openingHours);
             case 1: // Prisma Room
-                return CostsCalculator.CalculatePrismaRoomPrice(capacity, openingHours);
+                return CostsCalculator.CalculatePrismaRoomCosts(capacity, openingHours);
             case 2: // Spectrum Workspace
-                return CostsCalculator.CalculateSpectrumWorkspacePrice(openingHours);
+                return CostsCalculator.CalculateSpectrumWorkspaceCosts(openingHours);
             case 3: // Prisma Workspace
-                return CostsCalculator.CalculatePrismaWorkspacePrice(openingHours);
+                return CostsCalculator.CalculatePrismaWorkspaceCosts(openingHours);
             case 4: // Public Space
-                return CostsCalculator.CalculatePublicSpacePrice(openingHours);
+                return CostsCalculator.CalculatePublicSpaceCosts(openingHours);
         }
         return 0;
     }
     
     public static int HandlePrices(int capacity, int lokaalType)
     {
-        int openingHours = 0; // If you need specific time of day for prices you should change it into a interaction
         switch (lokaalType)
         {
             case 0: // Spectrum Room
-                return CostsCalculator.CalculateSpectrumRoomPrice(capacity, openingHours);
+                return PricingCalculator.CalculateSpectrumRoomPrice(capacity);
             case 1: // Prisma Room
-                return CostsCalculator.CalculatePrismaRoomPrice(capacity, openingHours);
+                return PricingCalculator.CalculatePrismaRoomPrice(capacity);
             case 2: // Spectrum Workspace
-                return CostsCalculator.CalculateSpectrumWorkspacePrice(openingHours);
+                return PricingCalculator.CalculateSpectrumWorkspacePrice();
             case 3: // Prisma Workspace
-                return CostsCalculator.CalculatePrismaWorkspacePrice(openingHours);
+                return PricingCalculator.CalculatePrismaWorkspacePrice();
             case 4: // Public Space
-                return CostsCalculator.CalculatePublicSpacePrice(openingHours);
+                return PricingCalculator.CalculatePublicSpacePrice();
         }
         return 0;
     }
