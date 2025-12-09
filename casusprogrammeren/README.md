@@ -31,5 +31,10 @@
     verzoek afgewezen. De planning moet enigszins optimaal zijn, waarbij de capaciteit van
     een lokaal zoveel mogelijk wordt benut.
 
-#### Docs terminal.gui v1.19.0
+#### Terminal.gui v1.19.0
+https://github.com/gui-cs/Terminal.Gui/tree/release/0.19
+
 https://gui-cs.github.io/Terminal.GuiV1Docs/docs/overview.html
+
+#### Dijkstra.NET v1.2.1
+https://github.com/matiii/Dijkstra.NET

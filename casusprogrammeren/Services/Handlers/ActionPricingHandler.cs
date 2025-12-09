@@ -1,29 +1,44 @@
-﻿using System.Text;
-using casusprogrammeren.utils;
+﻿using casusprogrammeren.Services.Calculation;
 
 namespace casusprogrammeren.Services.Handlers;
 
 public class ActionPricingHandler
 {
-    public static string HandleAction()
+    public static int HandleCosts(int capacity, int lokaalType)
     {
-        var sb = new StringBuilder();
-        
-        var deserializer = new DeserializeFromFile();
-        var rooms = deserializer.Deserialize<Rooms>();
-        if (rooms != null)
+        int openingHours = 0; // If you need specific time of day for costs you should change it into a interaction
+        switch (lokaalType)
         {
-            foreach (var room in rooms)
-            {
-                sb.AppendLine($"Naam: {room.Name}, " +
-                              $"Code: {room.Code}, " +
-                              $"Type: {room.Type}, " +
-                              $"Inhoud in m3: {room.VolumeM3}, " +
-                              $"Capaciteit: {room.CapacityPeople} ");
-                
-            }
+            case 0: // Spectrum Room
+                return CostsCalculator.CalculateSpectrumRoomPrice(capacity, openingHours);
+            case 1: // Prisma Room
+                return CostsCalculator.CalculatePrismaRoomPrice(capacity, openingHours);
+            case 2: // Spectrum Workspace
+                return CostsCalculator.CalculateSpectrumWorkspacePrice(openingHours);
+            case 3: // Prisma Workspace
+                return CostsCalculator.CalculatePrismaWorkspacePrice(openingHours);
+            case 4: // Public Space
+                return CostsCalculator.CalculatePublicSpacePrice(openingHours);
         }
-
-        return sb.ToString();
+        return 0;
+    }
+    
+    public static int HandlePrices(int capacity, int lokaalType)
+    {
+        int openingHours = 0; // If you need specific time of day for prices you should change it into a interaction
+        switch (lokaalType)
+        {
+            case 0: // Spectrum Room
+                return CostsCalculator.CalculateSpectrumRoomPrice(capacity, openingHours);
+            case 1: // Prisma Room
+                return CostsCalculator.CalculatePrismaRoomPrice(capacity, openingHours);
+            case 2: // Spectrum Workspace
+                return CostsCalculator.CalculateSpectrumWorkspacePrice(openingHours);
+            case 3: // Prisma Workspace
+                return CostsCalculator.CalculatePrismaWorkspacePrice(openingHours);
+            case 4: // Public Space
+                return CostsCalculator.CalculatePublicSpacePrice(openingHours);
+        }
+        return 0;
     }
 }

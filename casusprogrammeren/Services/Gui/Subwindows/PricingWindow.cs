@@ -4,6 +4,8 @@ using Terminal.Gui;
 namespace casusprogrammeren.Services.Gui.Subwindows;
 
 public class PricingWindow : Window {
+    int capacity;
+    int dagen;
 
     public PricingWindow ()
     {
@@ -11,8 +13,8 @@ public class PricingWindow : Window {
         
         var items = new List<string> 
         {
-            "Pseudocode Algoritme", 
-            "-", 
+            "Kosten van lokaal", 
+            "Winst lokaal berekenen", 
             "-", 
             "← Terug"
         };
@@ -33,13 +35,65 @@ public class PricingWindow : Window {
             switch (selection)
             {
                 case 0:
-                { 
-                    MessageBox.Query("", ActionPricingHandler.HandleAction(), "OK");
+                {
+                    var ruimte = MessageBox.Query("Waar en wat voor lokaal", 
+                        "selecteer locatie en type lokaal", 
+                        "Spectrum Ruimte", "Prisma Ruimte", 
+                        "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");
+                    if (ruimte == 0 || ruimte == 1)
+                    {
+                        var m = MessageBox.Query("Selecteer capaciteit",
+                            "Selecteer wat voor capaciteit lokaal je wil",
+                            "27", "60");
+                        if (m == 0)
+                            capacity = 27;
+                        else
+                            capacity = 60;
+                    }
+                    var n = MessageBox.Query("Selecteer periode", 
+                        "Wat voor periode wilt u berekenen?", 
+                        "Dag", "Week");
+                    if (n == 0)
+                    {
+                        dagen = 1;
+                    }
+                    else
+                    {
+                        dagen = 5;
+                    }
+
+                    int kosten = ActionPricingHandler.HandleCosts(capacity, ruimte);
+                    MessageBox.Query("", 
+                        "Kosten: €" + Convert.ToString(kosten * dagen), "OK");
                     break;
                 }
                 case 1:
                 {
-                    /*MessageBox.Query("Action", ActionHandler.HandleOxygenCalculator(), "OK");*/
+                    var ruimte = MessageBox.Query("Waar en wat voor lokaal", 
+                        "selecteer locatie en type lokaal", 
+                        "Spectrum Ruimte", "Prisma Ruimte", 
+                        "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");
+                    if (ruimte == 0 || ruimte == 1)
+                    {
+                        var m = MessageBox.Query("Selecteer capaciteit",
+                            "Selecteer wat voor capaciteit lokaal je wil",
+                            "27", "60");
+                        if (m == 0)
+                            capacity = 27;
+                        else
+                            capacity = 60;
+                    }
+                    var n = MessageBox.Query("Selecteer periode", 
+                        "Wat voor periode wilt u berekenen?", 
+                        "Dag", "Week");
+                    if (n == 0)
+                    {
+                        dagen = 1;
+                    }
+                    else
+                    {
+                        dagen = 5;
+                    }
                     break;
                 }
                 case 2:

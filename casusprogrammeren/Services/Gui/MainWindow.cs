@@ -14,7 +14,8 @@ public class MainWindow : Window {
             "Ruimtes", 
             "Prijzen",
             "Zuurstof Ruimtes", 
-            "Algoritme"
+            "Algoritme",
+            "╳ Quit"
         };
         var listView = new ListView(items)
         {
@@ -40,18 +41,21 @@ public class MainWindow : Window {
                 case 1:
                 {
                     Application.Run<PricingWindow>();
-                    
                     break;
                 }
                 case 2:
                 {
                     Application.Run<OxygenWindow>();
-                    
                     break;
                 }
                 case 3:
                 {
                     Application.Run<AlgorithmWindow>();
+                    break;
+                }
+                case 4:
+                {
+                    Environment.Exit(0);
                     break;
                 }
             }
