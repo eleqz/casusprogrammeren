@@ -17,10 +17,17 @@ public class ActionOxygenHandler
             sb.AppendLine("Bij 27 personen en 2 uur in het lokaal is er: ");
             foreach (var room in rooms)
             {
-                sb.AppendLine(OxygenCalculator.CalculateOxygenUsedTwoHours() +
-                              $" liter gebruikte zuurstof in {room.Code} ");
-                sb.AppendLine(OxygenCalculator.CalculateOxygenNotUsedTwoHours(room.VolumeM3 ?? 0) +
-                              $" liter zuurstof over in {room.Code} ");
+                if (OxygenCalculator.CalculateOxygenNotUsedTwoHours(room.VolumeM3 ?? 0) < 0)
+                {
+                    sb.AppendLine("Error!, slechte gegevens voor dit lokaal.");
+                }
+                else
+                {
+                    sb.AppendLine(OxygenCalculator.CalculateOxygenUsedTwoHours() +
+                                  $" liter gebruikte zuurstof in {room.Code} ");
+                    sb.AppendLine(OxygenCalculator.CalculateOxygenNotUsedTwoHours(room.VolumeM3 ?? 0) +
+                                  $" liter zuurstof over in {room.Code} ");
+                }
             }
 
         }
@@ -37,6 +44,10 @@ public class ActionOxygenHandler
         {
             foreach (var room in rooms)
             {
+                if (OxygenCalculator.CalculateOxygenNotUsedTwoHours(room.VolumeM3 ?? 0) < 0)
+                {
+                    sb.AppendLine("Error!, slechte gegevens voor dit lokaal.");
+                }
                 sb.AppendLine($"Maximale consumptie aan zuurstof in {room.Code} is " + 
                               OxygenCalculator.CalculateMaximumOxygenConsumption(room.VolumeM3 ?? 0) + " liter");
             }

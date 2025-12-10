@@ -4,7 +4,7 @@ namespace casusprogrammeren.Services.Handlers;
 
 public class ActionPricingHandler
 {
-    public static int HandleCosts(int capacity, int lokaalType)
+    public static float HandleCosts(int capacity, int lokaalType)
     {
         int openingHours = 0; // If you need specific time of day for costs you should change it into a interaction
         switch (lokaalType)
@@ -23,7 +23,7 @@ public class ActionPricingHandler
         return 0;
     }
     
-    public static int HandlePrices(int capacity, int lokaalType)
+    public static float HandlePrices(int capacity, int lokaalType)
     {
         switch (lokaalType)
         {

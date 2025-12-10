@@ -5,7 +5,7 @@ namespace casusprogrammeren.Services.Gui.Subwindows;
 
 public class PricingWindow : Window {
     int capacity;
-    int dagen;
+    int days;
 
     public PricingWindow ()
     {
@@ -14,7 +14,7 @@ public class PricingWindow : Window {
         var items = new List<string> 
         {
             "Kosten van lokaal", 
-            "Winst lokaal berekenen", 
+            "Huuraanvraag lokaal berekenen", 
             "-", 
             "← Terug"
         };
@@ -36,11 +36,11 @@ public class PricingWindow : Window {
             {
                 case 0:
                 {
-                    var ruimte = MessageBox.Query("Waar en wat voor lokaal", 
+                    var room = MessageBox.Query("Waar en wat voor lokaal", 
                         "selecteer locatie en type lokaal", 
                         "Spectrum Ruimte", "Prisma Ruimte", 
                         "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");
-                    if (ruimte == 0 || ruimte == 1)
+                    if (room == 0 || room == 1)
                     {
                         var m = MessageBox.Query("Selecteer capaciteit",
                             "Selecteer wat voor capaciteit lokaal je wil",
@@ -55,25 +55,26 @@ public class PricingWindow : Window {
                         "Dag", "Week");
                     if (n == 0)
                     {
-                        dagen = 1;
+                        days = 1;
                     }
                     else
                     {
-                        dagen = 5;
+                        days = 5;
                     }
 
-                    int kosten = ActionPricingHandler.HandleCosts(capacity, ruimte);
+                    float costs = ActionPricingHandler.HandleCosts(capacity, room);
+                    
                     MessageBox.Query("", 
-                        "Kosten: €" + Convert.ToString(kosten * dagen), "OK");
+                        "Kosten: €" + Convert.ToString(costs * days), "OK");
                     break;
                 }
                 case 1:
                 {
-                    var ruimte = MessageBox.Query("Waar en wat voor lokaal", 
+                    var room = MessageBox.Query("Waar en wat voor lokaal", 
                         "selecteer locatie en type lokaal", 
                         "Spectrum Ruimte", "Prisma Ruimte", 
                         "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");
-                    if (ruimte == 0 || ruimte == 1)
+                    if (room == 0 || room == 1)
                     {
                         var m = MessageBox.Query("Selecteer capaciteit",
                             "Selecteer wat voor capaciteit lokaal je wil",
@@ -88,12 +89,23 @@ public class PricingWindow : Window {
                         "Dag", "Week");
                     if (n == 0)
                     {
-                        dagen = 1;
+                        days = 1;
                     }
                     else
                     {
-                        dagen = 5;
+                        days = 5;
                     }
+
+                    float costs = ActionPricingHandler.HandleCosts(capacity, room);
+                    costs *= days;
+
+                    float yield = ActionPricingHandler.HandlePrices(capacity, room);
+                    yield *= days;
+                    
+                    float result = yield - costs;
+                    
+                    MessageBox.Query("", 
+                        "Winst: €" + Convert.ToString(result), "OK");
                     break;
                 }
                 case 2:

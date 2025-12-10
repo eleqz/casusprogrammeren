@@ -14,7 +14,7 @@ public class RoomsWindow : Window {
         {
             "Zie Ruimtes", 
             "Voeg ruimtes toe", 
-            "-", 
+            "Reserveer een ruimte", 
             "← Terug"
         };
         var listView = new ListView(items)

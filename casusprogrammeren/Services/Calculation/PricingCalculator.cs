@@ -3,33 +3,33 @@
 public class PricingCalculator
 {
     
-    public static int CalculateSpectrumRoomPrice(int capacity)
+    public static float CalculateSpectrumRoomPrice(int capacity)
     {
-        int basePrice = capacity * 20;
+        float basePrice = capacity * 20;
         return basePrice;
     }
 
     public static float CalculatePrismaRoomPrice(int capacity)
     {
-        float basePrice = capacity * 17.50;
+        float basePrice = capacity * 17.5F;
         return basePrice;
     }
 
-    public static int CalculateSpectrumWorkspacePrice()
+    public static float CalculateSpectrumWorkspacePrice()
     {
-        int basePrice = 120;
+        float basePrice = 120;
         return basePrice;
     }
 
-    public static int CalculatePrismaWorkspacePrice()
+    public static float CalculatePrismaWorkspacePrice()
     {
-        int basePrice = 150;
+        float basePrice = 150;
         return basePrice;
     }
 
-    public static int CalculatePublicSpacePrice()
+    public static float CalculatePublicSpacePrice()
     {
-        int basePrice = 250;
+        float basePrice = 250;
         return basePrice;
     }
 }

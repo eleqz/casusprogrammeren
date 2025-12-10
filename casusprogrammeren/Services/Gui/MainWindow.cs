@@ -11,8 +11,8 @@ public class MainWindow : Window {
        
         var items = new List<string> 
         {
-            "Ruimtes", 
-            "Prijzen",
+            "Ruimtesbeheer", 
+            "Prijzen en kosten Ruimtes",
             "Zuurstof Ruimtes", 
             "Algoritme",
             "╳ Quit"
