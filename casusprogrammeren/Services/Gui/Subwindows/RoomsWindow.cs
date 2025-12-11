@@ -4,7 +4,9 @@ using Terminal.Gui;
 
 namespace casusprogrammeren.Services.Tui;
 
-public class RoomsWindow : Window {
+public class RoomsWindow : Window
+{
+    private int days;
 
     public RoomsWindow ()
     {
@@ -12,9 +14,9 @@ public class RoomsWindow : Window {
         
         var items = new List<string>
         {
-            "Zie Ruimtes", 
+            "Zie alle Ruimtes", 
             "Voeg ruimtes toe", 
-            "Reserveer een ruimte", 
+            "Ruimte opzoeken", 
             "← Terug"
         };
         var listView = new ListView(items)
@@ -82,7 +84,40 @@ public class RoomsWindow : Window {
                 }
                 case 2:
                 {
-                    /*MessageBox.Query("Action", ActionRoomsHandler.HandlePseudoCode(), "OK");*/
+                    /*var room = MessageBox.Query("Waar en wat voor lokaal", 
+                        "selecteer locatie en type lokaal", 
+                        "Spectrum Ruimte", "Prisma Ruimte", 
+                        "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");*/
+                    var dialog = new Dialog("", 60, 8);
+
+                    var label = new Label("Benodigde Capaciteit:") { X = 1, Y = 1 };
+                    var input = new TextField("") { X = 1, Y = 2, Width = Dim.Fill() };
+
+                    string result;
+
+                    var ok = new Button("OK") { IsDefault = true };
+                    ok.Clicked += () =>
+                    {
+                        result = input.Text.ToString();
+                        MessageBox.ErrorQuery("", $"Ruimte(s) beschikbaar: " +
+                                                      $"{ActionRoomsHandler.HandleReservationRoom
+                                                          (Convert.ToInt16(result))}", "OK");
+                        
+                        Application.RequestStop();
+                    };
+
+                    var cancel = new Button("Cancel");
+                    cancel.Clicked += () =>
+                    {
+                        result = null;
+                        Application.RequestStop();
+                    };
+
+                    dialog.Add(label, input);
+                    dialog.AddButton(ok);
+                    dialog.AddButton(cancel);
+
+                    Application.Run(dialog);
                     break;
                 }
                 case 3:

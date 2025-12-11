@@ -4,8 +4,8 @@ using Terminal.Gui;
 namespace casusprogrammeren.Services.Gui.Subwindows;
 
 public class PricingWindow : Window {
-    int capacity;
-    int days;
+    private int capacity;
+    private int days;
 
     public PricingWindow ()
     {

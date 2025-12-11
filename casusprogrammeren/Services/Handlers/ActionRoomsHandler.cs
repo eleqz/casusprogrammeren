@@ -20,7 +20,26 @@ public class ActionRoomsHandler
                               $"Type: {room.Type}, " +
                               $"Inhoud in m3: {room.VolumeM3}, " +
                               $"Capaciteit: {room.CapacityPeople} ");
-                
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    public static string HandleReservationRoom(int capacity)
+    {
+        var sb = new StringBuilder();
+        
+        var deserializer = new DeserializeFromFile();
+        var rooms = deserializer.Deserialize<Rooms>();
+        if (rooms != null)
+        {
+            foreach (var room in rooms)
+            {
+                if (capacity <= room.CapacityPeople)
+                {
+                    sb.AppendLine($"\n{room.Code} ");
+                }
             }
         }
 
