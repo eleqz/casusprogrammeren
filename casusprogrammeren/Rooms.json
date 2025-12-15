@@ -16,7 +16,8 @@
       "Name": "werkruimte",
       "VolumeM3": 45,
       "CapacityPeople": 4,
-      "PresentPeople": 4,
+      "PresentStudents": 4,
+      "PresentTeachers": 0,
       "DurationHours": 1.5,
       "Activity": "vergadering"
     },
@@ -26,7 +27,8 @@
       "Name": "bowling",
       "VolumeM3": -20,
       "CapacityPeople": 10,
-      "PresentPeople": -5,
+      "PresentStudents": -3,
+      "PresentTeachers": -2,
       "DurationHours": null,
       "Activity": null
     }

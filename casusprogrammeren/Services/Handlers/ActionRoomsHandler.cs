@@ -26,7 +26,7 @@ public class ActionRoomsHandler
         return sb.ToString();
     }
 
-    public static string HandleReservationRoom(int capacity)
+    public static string HandleSearchRoom(int capacity)
     {
         var sb = new StringBuilder();
         
@@ -38,9 +38,37 @@ public class ActionRoomsHandler
             {
                 if (capacity <= room.CapacityPeople)
                 {
-                    sb.AppendLine($"\n{room.Code} ");
+                    sb.AppendLine($"{room.Code}\n");
                 }
             }
+        }
+
+        return sb.ToString();
+    }
+    public static string HandleAmountPeoplePresent()
+    {
+        var sb = new StringBuilder();
+        
+        var deserializer = new DeserializeFromFile();
+        var rooms = deserializer.Deserialize<Rooms>();
+        if (rooms != null)
+        {
+            int? studentAmount = 0;
+            int? teacherAmount = 0;
+            foreach (var room in rooms)
+            {
+                if (room.PresentStudents > 0)
+                {
+                    studentAmount += room.PresentStudents;
+                }
+                if (room.PresentTeachers > 0)
+                {
+                    teacherAmount += room.PresentTeachers;
+                }
+            }
+            sb.AppendLine("Aantal aanwezigen: ");
+            sb.AppendLine($"Studenten: {Convert.ToString(studentAmount)}");
+            sb.AppendLine($"Docenten: {Convert.ToString(teacherAmount)}");
         }
 
         return sb.ToString();

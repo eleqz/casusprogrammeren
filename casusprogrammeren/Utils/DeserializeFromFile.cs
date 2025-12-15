@@ -9,7 +9,8 @@ namespace casusprogrammeren.utils
         public string? Name { get; set; }
         public int? VolumeM3 { get; set; }
         public int? CapacityPeople { get; set; }
-        public int? PresentPeople { get; set; }
+        public int? PresentStudents { get; set; }
+        public int? PresentTeachers { get; set; }
         public float? DurationHours { get; set; }
         public string? Activity { get; set; }
     }

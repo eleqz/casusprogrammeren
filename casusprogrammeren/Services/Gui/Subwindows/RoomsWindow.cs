@@ -17,6 +17,7 @@ public class RoomsWindow : Window
             "Zie alle Ruimtes", 
             "Voeg ruimtes toe", 
             "Ruimte opzoeken", 
+            "Zie hoeveelheid aanwezige in CHE",
             "← Terug"
         };
         var listView = new ListView(items)
@@ -84,10 +85,6 @@ public class RoomsWindow : Window
                 }
                 case 2:
                 {
-                    /*var room = MessageBox.Query("Waar en wat voor lokaal", 
-                        "selecteer locatie en type lokaal", 
-                        "Spectrum Ruimte", "Prisma Ruimte", 
-                        "Spectrum Werkruimte", "Prisma Werkruimte", "Publieke Ruimte");*/
                     var dialog = new Dialog("", 60, 8);
 
                     var label = new Label("Benodigde Capaciteit:") { X = 1, Y = 1 };
@@ -100,7 +97,7 @@ public class RoomsWindow : Window
                     {
                         result = input.Text.ToString();
                         MessageBox.ErrorQuery("", $"Ruimte(s) beschikbaar: " +
-                                                      $"{ActionRoomsHandler.HandleReservationRoom
+                                                      $"{ActionRoomsHandler.HandleSearchRoom
                                                           (Convert.ToInt16(result))}", "OK");
                         
                         Application.RequestStop();
@@ -121,6 +118,12 @@ public class RoomsWindow : Window
                     break;
                 }
                 case 3:
+                {
+                    MessageBox.Query("Aanwezige Personen in CHE", 
+                        ActionRoomsHandler.HandleAmountPeoplePresent(), "OK");
+                    break;
+                }
+                case 4:
                 {
                     Application.RequestStop();
                     break;
