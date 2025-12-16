@@ -18,6 +18,7 @@ public class RoomsWindow : Window
             "Voeg ruimtes toe", 
             "Ruimte opzoeken", 
             "Zie hoeveelheid aanwezige in CHE",
+            "Zie bezettingsgraad CHE per maand",
             "← Terug"
         };
         var listView = new ListView(items)
@@ -124,6 +125,12 @@ public class RoomsWindow : Window
                     break;
                 }
                 case 4:
+                {
+                    MessageBox.Query("Bezettingsgraad gebouwen", 
+                        ActionRoomsHandler.HandleBuildingsOccupance(), "OK");
+                    break;
+                }
+                case 5:
                 {
                     Application.RequestStop();
                     break;

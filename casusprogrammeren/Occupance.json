@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Month": "2025-09",
+    "Buildings": [
+      {
+        "Name": "Spectrum",
+        "TotalRooms": 8,
+        "OccupiedDays": 198
+      },
+      {
+        "Name": "Prisma",
+        "TotalRooms": 6,
+        "OccupiedDays": 141
+      }
+    ]
+  },
+  {
+    "Month": "2025-10",
+    "Buildings": [
+      {
+        "Name": "Spectrum",
+        "TotalRooms": 9,
+        "OccupiedDays": 243
+      },
+      {
+        "Name": "Prisma",
+        "TotalRooms": 7,
+        "OccupiedDays": 186
+      }
+    ]
+  },
+  {
+    "Month": "2025-11",
+    "Buildings": [
+      {
+        "Name": "Spectrum",
+        "TotalRooms": 10,
+        "OccupiedDays": 255
+      },
+      {
+        "Name": "Prisma",
+        "TotalRooms": 8,
+        "OccupiedDays": 204
+      }
+    ]
+  },
+  {
+    "Month": "2025-12",
+    "Buildings": [
+      {
+        "Name": "Spectrum",
+        "TotalRooms": 10,
+        "OccupiedDays": 279
+      },
+      {
+        "Name": "Prisma",
+        "TotalRooms": 8,
+        "OccupiedDays": 217
+      }
+    ]
+  }
+]

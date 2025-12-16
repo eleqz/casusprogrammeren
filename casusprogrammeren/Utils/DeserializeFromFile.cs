@@ -15,6 +15,20 @@ namespace casusprogrammeren.utils
         public string? Activity { get; set; }
     }
 
+    public class Occupance
+    {
+        public string Month { get; set; }
+        public List<Building> Buildings { get; set; }
+    }
+
+    public class Building
+    {
+        public string Name { get; set; }
+        public int TotalRooms { get; set; }
+        public double OccupiedDays { get; set; }
+    }
+
+
     public class DeserializeFromFile
     {
         public string? filePath { get; private set; }

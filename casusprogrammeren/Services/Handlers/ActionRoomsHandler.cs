@@ -73,4 +73,37 @@ public class ActionRoomsHandler
 
         return sb.ToString();
     }
+
+    public static string HandleBuildingsOccupance()
+    {
+        var sb = new StringBuilder();
+    
+        var deserializer = new DeserializeFromFile();
+        var occupance = deserializer.Deserialize<Occupance>();
+
+        if (occupance != null)
+        {
+            foreach (var month in occupance)
+            {
+                DateTime date = DateTime.Parse(month.Month);
+                int daysInMonth = DateTime.DaysInMonth(date.Year, date.Month);
+            
+                sb.AppendLine($"Maand: {date:MMMM yyyy}");
+                sb.AppendLine();
+                foreach (var building in month.Buildings)
+                {
+                    double occupancyRate = building.OccupiedDays / (daysInMonth * building.TotalRooms) * 100;
+                
+                    sb.AppendLine($"  Gebouw: {building.Name}");
+                    sb.AppendLine($"  Lokalen: {building.TotalRooms}");
+                    sb.AppendLine($"  Bezette dagen: {building.OccupiedDays}");
+                    sb.AppendLine($"  Bezettingsgraad: {occupancyRate:F}%");
+                   
+                }
+                sb.AppendLine("--------------------------");
+            }
+        }
+
+        return sb.ToString();
+    }
 }
