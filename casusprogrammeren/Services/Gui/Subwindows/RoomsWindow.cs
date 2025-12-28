@@ -57,7 +57,7 @@ public class RoomsWindow : Window
                 case 1:
                 {
                     Add(textView, saveButton);
-                    var deserializer = new DeserializeFromFile();
+                    var deserializer = new JsonUtil();
                     deserializer.Deserialize<Rooms>();
                     string filePath = deserializer.filePath;
                     

@@ -9,7 +9,7 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var rooms = deserializer.Deserialize<Rooms>();
         if (rooms != null)
         {
@@ -30,7 +30,7 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var rooms = deserializer.Deserialize<Rooms>();
         if (rooms != null)
         {
@@ -49,7 +49,7 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var rooms = deserializer.Deserialize<Rooms>();
         if (rooms != null)
         {
@@ -78,7 +78,7 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
     
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var occupance = deserializer.Deserialize<Occupance>();
 
         if (occupance != null)

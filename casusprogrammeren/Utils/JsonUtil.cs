@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿
+using System.Text.Json;
 
 namespace casusprogrammeren.utils
 {
@@ -29,7 +30,7 @@ namespace casusprogrammeren.utils
     }
 
 
-    public class DeserializeFromFile
+    public class JsonUtil
     {
         public string? filePath { get; private set; }
 

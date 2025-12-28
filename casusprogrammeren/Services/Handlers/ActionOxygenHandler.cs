@@ -10,7 +10,7 @@ public class ActionOxygenHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var rooms = deserializer.Deserialize<Rooms>();
         if (rooms != null)
         {
@@ -38,7 +38,7 @@ public class ActionOxygenHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new DeserializeFromFile();
+        var deserializer = new JsonUtil();
         var rooms = deserializer.Deserialize<Rooms>();
         if (rooms != null)
         {
