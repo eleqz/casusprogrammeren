@@ -9,8 +9,8 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new JsonUtil();
-        var rooms = deserializer.Deserialize<Rooms>();
+        var jsonUtil = new JsonUtil();
+        var rooms = jsonUtil.Deserialize<Rooms>();
         if (rooms != null)
         {
             foreach (var room in rooms)
@@ -30,8 +30,8 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new JsonUtil();
-        var rooms = deserializer.Deserialize<Rooms>();
+        var jsonUtil = new JsonUtil();
+        var rooms = jsonUtil.Deserialize<Rooms>();
         if (rooms != null)
         {
             foreach (var room in rooms)
@@ -49,8 +49,8 @@ public class ActionRoomsHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new JsonUtil();
-        var rooms = deserializer.Deserialize<Rooms>();
+        var jsonUtil = new JsonUtil();
+        var rooms = jsonUtil.Deserialize<Rooms>();
         if (rooms != null)
         {
             int? studentAmount = 0;

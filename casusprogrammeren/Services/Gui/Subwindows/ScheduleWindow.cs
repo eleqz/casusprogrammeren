@@ -3,16 +3,15 @@ using Terminal.Gui;
 
 namespace casusprogrammeren.Services.Gui;
 
-public class AlgorithmWindow : Window {
+public class ScheduleWindow : Window {
 
-    public AlgorithmWindow ()
+    public ScheduleWindow ()
     {
-        Title = "Beheerders Applicatie - Algoritme";
+        Title = "Beheerders Applicatie - Planning";
         
         var items = new List<string> 
         {
-            "Pseudocode Algoritme", 
-            "Algoritme", 
+            "Maak planning", 
             "← Terug"
         };
         var listView = new ListView(items)
@@ -33,15 +32,10 @@ public class AlgorithmWindow : Window {
             {
                 case 0:
                 { 
-                    MessageBox.Query("", ActionAlgorithmHandler.HandlePseudoCode(), "OK");
+                    MessageBox.Query("", ActionScheduleHandler.HandleScheduleRequests(), "OK");
                     break;
                 }
                 case 1:
-                {
-                    MessageBox.Query("", ActionAlgorithmHandler.HandleAlgorithm(), "OK");
-                    break;
-                }
-                case 2:
                 {
                     Application.RequestStop();
                     break;

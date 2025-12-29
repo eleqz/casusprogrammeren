@@ -1,6 +1,6 @@
 ﻿using casusprogrammeren.Services.Gui.Subwindows;
-using casusprogrammeren.Services.Tui;
 using Terminal.Gui;
+
 namespace casusprogrammeren.Services.Gui;
 
 public class MainWindow : Window {
@@ -15,6 +15,7 @@ public class MainWindow : Window {
             "Prijzen en kosten Ruimtes",
             "Zuurstof Ruimtes", 
             "Algoritme",
+            "Planning",
             "╳ Quit"
         };
         var listView = new ListView(items)
@@ -54,6 +55,11 @@ public class MainWindow : Window {
                     break;
                 }
                 case 4:
+                {
+                    Application.Run<ScheduleWindow>();
+                    break;
+                }
+                case 5:
                 {
                     Environment.Exit(0);
                     break;

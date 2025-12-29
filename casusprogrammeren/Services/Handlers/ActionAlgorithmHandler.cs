@@ -8,7 +8,6 @@ public class ActionAlgorithmHandler
     public static string HandlePseudoCode()
     {
         {
-            // TODO: Algoritme afmaken
             var sb = new StringBuilder();
             sb.AppendLine("""
                           PseudoCode
@@ -22,21 +21,10 @@ public class ActionAlgorithmHandler
                               print "You have arrived at your destination"
                           else 
                               location != destination do
-                              determine next_step towards destination
+                              determine next_step towards destination with dijkstra
                               show next_step
                               update location
-
-
-
-
-
-
-
-
-
-
-
-                          \u001b[1mEND\u001b[0m
+                          END
                           """);
             return sb.ToString();
         }
@@ -45,7 +33,7 @@ public class ActionAlgorithmHandler
     public static string HandleAlgorithm()
     {
         var sb = new StringBuilder();
-        var path = AlgorithmCalculator.CalculateShortestPath(1, 11);
+        var path = Algorithm.CalculateShortestPath(1, 11);
         var nodeNames = new Dictionary<uint, string>
         {
             { 1, "Ingang" },

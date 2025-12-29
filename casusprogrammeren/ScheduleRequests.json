@@ -1,0 +1,24 @@
+﻿  [
+    {
+      "Id": 1,
+      "RequestedBy": "Pieter",
+      "RequestedTime": "2025-12-15T07:00:00",
+      "TimePreferences": {
+        "Earliest": "2025-12-15T09:00:00",
+        "Latest": "2025-12-15T11:00:00"
+      },
+      "Preferences": ["P2.167"],
+      "DurationMinutes": 120
+    },
+    {
+      "Id": 2,
+      "RequestedBy": "David",
+      "RequestedTime": "2025-06-15T11:00:00",
+      "TimePreferences": {
+        "Earliest": "2025-12-15T08:00:00",
+        "Latest": "2025-12-15T10:00:00"
+      },
+      "Preferences": ["P2.167"],
+      "DurationMinutes": 90
+    }
+  ]

@@ -10,8 +10,8 @@ public class ActionOxygenHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new JsonUtil();
-        var rooms = deserializer.Deserialize<Rooms>();
+        var jsonUtil = new JsonUtil();
+        var rooms = jsonUtil.Deserialize<Rooms>();
         if (rooms != null)
         {
             sb.AppendLine("Bij 27 personen en 2 uur in het lokaal is er: ");
@@ -38,18 +38,21 @@ public class ActionOxygenHandler
     {
         var sb = new StringBuilder();
         
-        var deserializer = new JsonUtil();
-        var rooms = deserializer.Deserialize<Rooms>();
+        var jsonUtil = new JsonUtil();
+        var rooms = jsonUtil.Deserialize<Rooms>();
         if (rooms != null)
         {
             foreach (var room in rooms)
             {
-                if (OxygenCalculator.CalculateOxygenNotUsedTwoHours(room.VolumeM3 ?? 0) < 0)
+                if (OxygenCalculator.CalculateMaximumOxygenConsumption(room.VolumeM3 ?? 0) < 0)
                 {
                     sb.AppendLine("Error!, slechte gegevens voor dit lokaal.");
                 }
-                sb.AppendLine($"Maximale consumptie aan zuurstof in {room.Code} is " + 
-                              OxygenCalculator.CalculateMaximumOxygenConsumption(room.VolumeM3 ?? 0) + " liter");
+                else
+                {
+                    sb.AppendLine($"Maximale consumptie aan zuurstof in {room.Code} is " +
+                                  OxygenCalculator.CalculateMaximumOxygenConsumption(room.VolumeM3 ?? 0) + " liter");
+                }
             }
                         
         }

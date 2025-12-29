@@ -6,7 +6,7 @@ public class ActionPricingHandler
 {
     public static float HandleCosts(int capacity, int lokaalType)
     {
-        int openingHours = 0; // If you need specific time of day for costs you should change it into a interaction
+        int openingHours = 0; // If you need specific time for costs change it into a interaction on window
         switch (lokaalType)
         {
             case 0: // Spectrum Room
@@ -28,15 +28,15 @@ public class ActionPricingHandler
         switch (lokaalType)
         {
             case 0: // Spectrum Room
-                return PricingCalculator.CalculateSpectrumRoomPrice(capacity);
+                return PricesCalculator.CalculateSpectrumRoomPrice(capacity);
             case 1: // Prisma Room
-                return PricingCalculator.CalculatePrismaRoomPrice(capacity);
+                return PricesCalculator.CalculatePrismaRoomPrice(capacity);
             case 2: // Spectrum Workspace
-                return PricingCalculator.CalculateSpectrumWorkspacePrice();
+                return PricesCalculator.CalculateSpectrumWorkspacePrice();
             case 3: // Prisma Workspace
-                return PricingCalculator.CalculatePrismaWorkspacePrice();
+                return PricesCalculator.CalculatePrismaWorkspacePrice();
             case 4: // Public Space
-                return PricingCalculator.CalculatePublicSpacePrice();
+                return PricesCalculator.CalculatePublicSpacePrice();
         }
         return 0;
     }

@@ -2,11 +2,10 @@
 using casusprogrammeren.utils;
 using Terminal.Gui;
 
-namespace casusprogrammeren.Services.Tui;
+namespace casusprogrammeren.Services.Gui.Subwindows;
 
 public class RoomsWindow : Window
 {
-    private int days;
 
     public RoomsWindow ()
     {
@@ -91,29 +90,24 @@ public class RoomsWindow : Window
                     var label = new Label("Benodigde Capaciteit:") { X = 1, Y = 1 };
                     var input = new TextField("") { X = 1, Y = 2, Width = Dim.Fill() };
 
-                    string result;
-
-                    var ok = new Button("OK") { IsDefault = true };
+                    var ok = new Button("OK") { X = 1, Y = 4 };
                     ok.Clicked += () =>
                     {
-                        result = input.Text.ToString();
-                        MessageBox.ErrorQuery("", $"Ruimte(s) beschikbaar: " +
+                        if (int.TryParse(input.Text.ToString(), out int parsedCapacity) && parsedCapacity > 0)
+                        {
+                            MessageBox.ErrorQuery("", $"Ruimte(s) beschikbaar: " +
                                                       $"{ActionRoomsHandler.HandleSearchRoom
-                                                          (Convert.ToInt16(result))}", "OK");
-                        
-                        Application.RequestStop();
+                                                          (parsedCapacity)}", "OK");
+                            Application.RequestStop();
+                        }
+                        else
+                        {
+                            MessageBox.ErrorQuery("Fout", "Voer een geldig getal in", "OK");
+                        }
                     };
-
-                    var cancel = new Button("Cancel");
-                    cancel.Clicked += () =>
-                    {
-                        result = null;
-                        Application.RequestStop();
-                    };
-
-                    dialog.Add(label, input);
-                    dialog.AddButton(ok);
-                    dialog.AddButton(cancel);
+                    
+                    dialog.Add(label, input, ok);
+                    
 
                     Application.Run(dialog);
                     break;

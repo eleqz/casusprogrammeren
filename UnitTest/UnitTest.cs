@@ -35,13 +35,13 @@ public class OxygenCalculatorTests
     }
 }
 
-public class PricingCalculatorTests
+public class PricesCalculatorTests
 {
     [Fact]
     public void CalculateSpectrumRoomPrice_Capacity27_Returns540()
     {
         // 27 * 20 = 540
-        var result = PricingCalculator.CalculateSpectrumRoomPrice(27);
+        var result = PricesCalculator.CalculateSpectrumRoomPrice(27);
         Assert.Equal(540, result);
     }
 
@@ -49,7 +49,7 @@ public class PricingCalculatorTests
     public void CalculateSpectrumRoomPrice_Capacity60_Returns1200()
     {
         // 60 * 20 = 1200
-        var result = PricingCalculator.CalculateSpectrumRoomPrice(60);
+        var result = PricesCalculator.CalculateSpectrumRoomPrice(60);
         Assert.Equal(1200, result);
     }
 
@@ -57,7 +57,7 @@ public class PricingCalculatorTests
     public void CalculatePrismaRoomPrice_Capacity27_Returns472Point5()
     {
         // 27 * 17.5 = 472.5
-        var result = PricingCalculator.CalculatePrismaRoomPrice(27);
+        var result = PricesCalculator.CalculatePrismaRoomPrice(27);
         Assert.Equal(472.5F, result);
     }
 
@@ -65,7 +65,7 @@ public class PricingCalculatorTests
     public void CalculateSpectrumWorkspacePrice_Returns120()
     {
         // 120
-        var result = PricingCalculator.CalculateSpectrumWorkspacePrice();
+        var result = PricesCalculator.CalculateSpectrumWorkspacePrice();
         Assert.Equal(120, result);
     }
 
@@ -73,7 +73,7 @@ public class PricingCalculatorTests
     public void CalculatePrismaWorkspacePrice_Returns150()
     {
         // 150
-        var result = PricingCalculator.CalculatePrismaWorkspacePrice();
+        var result = PricesCalculator.CalculatePrismaWorkspacePrice();
         Assert.Equal(150, result);
     }
 
@@ -81,7 +81,7 @@ public class PricingCalculatorTests
     public void CalculatePublicSpacePrice_Returns250()
     {
         // 250
-        var result = PricingCalculator.CalculatePublicSpacePrice();
+        var result = PricesCalculator.CalculatePublicSpacePrice();
         Assert.Equal(250, result);
     }
 }

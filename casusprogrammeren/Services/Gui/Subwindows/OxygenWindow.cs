@@ -32,7 +32,6 @@ public class OxygenWindow : Window {
             {
                 case 0:
                 { 
-                    
                     MessageBox.Query("Zuurstof Gebruik",
                         ActionOxygenHandler.HandleOxygenUsedCalculator(), "OK");
                     break;

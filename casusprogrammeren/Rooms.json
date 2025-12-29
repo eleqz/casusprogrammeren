@@ -11,6 +11,17 @@
       "Activity": "college"
     },
     {
+      "Type": "lokaal",
+      "Code": "P2.166",
+      "Name": "lokaal",
+      "VolumeM3": 500,
+      "CapacityPeople": 60,
+      "PresentStudents": 4,
+      "PresentTeachers": 1,
+      "DurationHours": 3,
+      "Activity": "college"
+    },
+    {
       "Type": "overlegruimte",
       "Code": "S0.096",
       "Name": "werkruimte",

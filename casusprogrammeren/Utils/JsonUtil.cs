@@ -28,6 +28,30 @@ namespace casusprogrammeren.utils
         public int TotalRooms { get; set; }
         public double OccupiedDays { get; set; }
     }
+    
+    public class ScheduleRequests
+    {
+        public int Id { get; set; }
+        public string RequestedBy { get; set; }
+        public DateTime RequestedTime { get; set; }
+        public TimePreference TimePreferences { get; set; }
+        public List<string> Preferences { get; set; }
+        public int DurationMinutes { get; set; }
+    }
+
+    public class TimePreference
+    {
+        public DateTime Earliest { get; set; }
+        public DateTime Latest { get; set; }
+    }
+
+    public class ScheduledRequests
+    {
+        public string Id { get; set; }
+        public string ScheduledRoom { get; set; }
+        public DateTime ScheduledStartTime { get; set; }
+        public DateTime ScheduledEndTime { get; set; }
+    }
 
 
     public class JsonUtil
@@ -43,6 +67,14 @@ namespace casusprogrammeren.utils
             List<T>? list = JsonSerializer.Deserialize<List<T>>(jsonString);
         
             return list;
+        }
+        
+        public void Serialize<T>(List<T> list, string jsonFile)
+        {
+            filePath = $"{Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName}\\" +
+                       $"{jsonFile}";
+            string jsonString = JsonSerializer.Serialize(list, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filePath, jsonString);
         }
     }
 }

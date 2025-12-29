@@ -3,7 +3,7 @@ using Dijkstra.NET.ShortestPath;
 
 namespace casusprogrammeren.Services.Calculation;
 
-public class AlgorithmCalculator
+public class Algorithm
 {
     public static IEnumerable<uint> CalculateShortestPath(int startNodeId, int endNodeId)
     {

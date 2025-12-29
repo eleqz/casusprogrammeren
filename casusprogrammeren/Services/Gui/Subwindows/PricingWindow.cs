@@ -14,8 +14,7 @@ public class PricingWindow : Window {
         var items = new List<string> 
         {
             "Kosten van lokaal", 
-            "Huuraanvraag lokaal berekenen", 
-            "-", 
+            "Kosten en opbrengsten berekenen",
             "← Terug"
         };
         var listView = new ListView(items)
@@ -84,18 +83,27 @@ public class PricingWindow : Window {
                         else
                             capacity = 60;
                     }
-                    var n = MessageBox.Query("Selecteer periode", 
-                        "Wat voor periode wilt u berekenen?", 
-                        "Dag", "Week");
-                    if (n == 0)
-                    {
-                        days = 1;
-                    }
-                    else
-                    {
-                        days = 5;
-                    }
+                    var dialog = new Dialog("Aantal dagen", 60, 8);
+                    var label = new Label("Aantal dagen:") { X = 1, Y = 1 };
+                    var input = new TextField("") { X = 1, Y = 2, Width = Dim.Fill() };
+                    var ok = new Button("OK") { X = 1, Y = 4 };
 
+                    ok.Clicked += () => 
+                    {
+                        if (int.TryParse(input.Text.ToString(), out int parsedDays) && parsedDays > 0)
+                        {
+                            days = parsedDays;
+                            Application.RequestStop();
+                        }
+                        else
+                        {
+                            MessageBox.ErrorQuery("Fout", "Voer een geldig getal in", "OK");
+                        }
+                    };
+
+                    dialog.Add(label, input, ok);
+                    Application.Run(dialog);
+                    
                     float costs = ActionPricingHandler.HandleCosts(capacity, room);
                     costs *= days;
 
@@ -105,15 +113,10 @@ public class PricingWindow : Window {
                     float result = yield - costs;
                     
                     MessageBox.Query("", 
-                        "Winst: €" + Convert.ToString(result), "OK");
+                        $"Kosten: €{Convert.ToString(costs)}\nOpbrengst: €{Convert.ToString(yield)}\nWinst: €{Convert.ToString(result)}", "OK");
                     break;
                 }
                 case 2:
-                {
-                    /*MessageBox.Query("Action", ActionHandler.HandlePseudoCode(), "OK");*/
-                    break;
-                }
-                case 3:
                 {
                     Application.RequestStop();
                     break;

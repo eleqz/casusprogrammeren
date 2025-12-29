@@ -1,6 +1,6 @@
 ﻿namespace casusprogrammeren.Services.Calculation;
 
-public class PricingCalculator
+public class PricesCalculator
 {
     
     public static float CalculateSpectrumRoomPrice(int capacity)
