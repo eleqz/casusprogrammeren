@@ -45,12 +45,25 @@ public class ActionAlgorithmHandler
     public static string HandleAlgorithm()
     {
         var sb = new StringBuilder();
-        var path = AlgorithmCalculator.CalculateShortestPath();
-    
+        var path = AlgorithmCalculator.CalculateShortestPath(1, 11);
+        var nodeNames = new Dictionary<uint, string>
+        {
+            { 1, "Ingang" },
+            { 2, "Trap naar brug" },
+            { 3, "Lift naar brug" },
+            { 4, "Brug" },
+            { 5, "Lift Prisma" },
+            { 6, "Eerste verdieping Prisma" },
+            { 7, "Tweede Verdieping Prisma" },
+            { 8, "Derde Verdieping Prisma" },
+            { 9, "Hart van ICT rechts" },
+            { 10, "Hart van ICT links" },
+            { 11, "ICT-Lokaal" }
+        };
+
         sb.AppendLine("Kortste pad is: ");
-        sb.AppendLine(string.Join(" -> ", path));
-    
+        sb.AppendLine(string.Join(" -> ", path.Select(id => nodeNames[id])));
+
         return sb.ToString();
     }
-
 }
